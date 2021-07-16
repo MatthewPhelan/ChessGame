@@ -22,14 +22,18 @@ void ChessPiece::kingMove(const int row, const int column)
     std::cout << "\n\t" << row << column;
 }
 
-void ChessPiece::queenMove(const int row, const int column)
+void ChessPiece::x_Move(const int row, const int column)
 {
+    int rowChecker{}, columnChecker{};
 
-}
-
-void ChessPiece::bishopMove(const int row, const int column)
-{
-
+    for(rowChecker=row, columnChecker = column; rowChecker != 7 && columnChecker != 7; rowChecker++, columnChecker++ )
+        std::cout << "\n\t" << rowChecker + 2 << columnChecker + 2;
+    for (rowChecker = row, columnChecker = column; rowChecker != 0 && columnChecker != 0; rowChecker--, columnChecker--)
+        std::cout << "\n\t" << rowChecker << columnChecker;
+    for (rowChecker = row, columnChecker = column; rowChecker != 7 && columnChecker != 0; rowChecker++, columnChecker--)
+        std::cout << "\n\t" << rowChecker + 2 << columnChecker;
+    for (rowChecker = row, columnChecker = column; rowChecker != 0 && columnChecker != 7; rowChecker--, columnChecker++)
+        std::cout << "\n\t" << rowChecker << columnChecker + 2;
 }
 
 void ChessPiece::knightMove(const int row, const int column)
@@ -53,9 +57,8 @@ void ChessPiece::knightMove(const int row, const int column)
         std::cout << "\n\t" << row + 2 << column + 3;
 }
 
-void ChessPiece::castleMove(const int row, const int column)
+void ChessPiece::crossMove(const int row, const int column)
 {
-    std::cout << "\tPiece: castle\n\tAvaliable move(s):";
     for (int rowChecker = 0; rowChecker < 8; rowChecker++)
     {
         if (!(rowChecker == row))
@@ -89,6 +92,6 @@ void ChessPiece::pawnMove(const int row, const int column, int player)
 
 void ChessPiece::noPieceSelected(const int row, const int column)
 {
-
+    std::cout << "\n\tWow, could have selected a piece";
    // if(row > 0)
 }

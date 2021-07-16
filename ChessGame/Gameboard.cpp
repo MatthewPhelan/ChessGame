@@ -29,7 +29,7 @@ void Gameboard::initialize()
         board[7][columnCounter] = backPieces[columnCounter];
     }
 
-    board[4][4] = SquareState::Knight;
+    board[3][5] = SquareState::Bishop;
 
 }
 
@@ -70,13 +70,23 @@ void Gameboard::move(const int playerMove, Player& player) {
     if (board[rowValue][columnValue] == SquareState::King)
         chessPiece.kingMove(rowValue, columnValue);
     if (board[rowValue][columnValue] == SquareState::Queen)
-        chessPiece.queenMove(rowValue, columnValue);
+    {
+        std::cout << "\tPiece: Queen\n\tAvaliable move(s):";
+        chessPiece.x_Move(rowValue, columnValue);
+        chessPiece.crossMove(rowValue, columnValue);
+    }
     if (board[rowValue][columnValue] == SquareState::Bishop)
-        chessPiece.bishopMove(rowValue, columnValue);
+    {
+        std::cout << "\tPiece: Bishop\n\tAvaliable move(s):";
+        chessPiece.x_Move(rowValue, columnValue);
+    }
     if (board[rowValue][columnValue] == SquareState::Knight)
         chessPiece.knightMove(rowValue, columnValue);
     if (board[rowValue][columnValue] == SquareState::Castle)
-        chessPiece.castleMove(rowValue, columnValue);
+    {
+        std::cout << "\tPiece: Castle\n\tAvaliable move(s):";
+        chessPiece.crossMove(rowValue, columnValue);
+    }
     if (board[rowValue][columnValue] == SquareState::Pawn)
         chessPiece.pawnMove(rowValue, columnValue, player.getPlayerTurn());
     if (board[rowValue][columnValue] == SquareState::EmptySlot)
