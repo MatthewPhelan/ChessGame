@@ -15,7 +15,7 @@ int main()
         players.changePlayer();
         std::cout << "\n\twhat piece do you want to move? ";
         std::cin >> move;
-        gameBoard.move (move);
+        gameBoard.move (move, players);
     } while (1);
     return 0;
 }

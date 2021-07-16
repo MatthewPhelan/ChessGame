@@ -29,7 +29,7 @@ void Gameboard::initialize()
         board[7][columnCounter] = backPieces[columnCounter];
     }
 
-    board[4][4] = SquareState::King;
+    board[4][4] = SquareState::Knight;
 
 }
 
@@ -59,7 +59,7 @@ std::string Gameboard::SquareStateToString(SquareState squareState) const
     return "@";
 }
 
-void Gameboard::move(const int playerMove) {
+void Gameboard::move(const int playerMove, Player& player) {
     ChessPiece chessPiece{};
     int rowValue = (playerMove / 10) - 1;
     int columnValue = (playerMove % 10) - 1;
@@ -78,8 +78,7 @@ void Gameboard::move(const int playerMove) {
     if (board[rowValue][columnValue] == SquareState::Castle)
         chessPiece.castleMove(rowValue, columnValue);
     if (board[rowValue][columnValue] == SquareState::Pawn)
-        chessPiece.pawnMove(rowValue, columnValue);
+        chessPiece.pawnMove(rowValue, columnValue, player.getPlayerTurn());
     if (board[rowValue][columnValue] == SquareState::EmptySlot)
         chessPiece.noPieceSelected(rowValue, columnValue);
 } 
-

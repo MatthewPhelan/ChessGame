@@ -2,6 +2,7 @@
 
 #include <array>
 #include <string>
+#include "Player.h"
 
 class Gameboard
 {
@@ -16,7 +17,7 @@ public:
         Castle,
         Pawn
     };
-    void move(const int playerMove);
+    void move(const int playerMove, Player& player);
     void initialize();
     void print() const;
 

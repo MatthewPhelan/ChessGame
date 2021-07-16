@@ -15,3 +15,8 @@ void Player::changePlayer()
 	}
 
 }
+
+int Player::getPlayerTurn()
+{
+	return playerTurn;
+}

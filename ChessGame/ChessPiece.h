@@ -8,6 +8,6 @@ public:
 	void bishopMove(const int row, const int column);
 	void knightMove(const int row, const int column);
 	void castleMove(const int row, const int column);
-	void pawnMove(const int row, const int column);
+	void pawnMove(const int row, const int column, int player);
 	void noPieceSelected(const int row, const int column);
 };
