@@ -69,17 +69,17 @@ void Gameboard::move(const int playerMove) {
 
     if (board[rowValue][columnValue] == SquareState::King)
         chessPiece.kingMove(rowValue, columnValue);
-    if (board[rowValue - 1][columnValue - 1] == SquareState::Queen)
+    if (board[rowValue][columnValue] == SquareState::Queen)
         chessPiece.queenMove(rowValue, columnValue);
-    if (board[rowValue - 1][columnValue - 1] == SquareState::Bishop)
+    if (board[rowValue][columnValue] == SquareState::Bishop)
         chessPiece.bishopMove(rowValue, columnValue);
-    if (board[rowValue - 1][columnValue - 1] == SquareState::Knight)
+    if (board[rowValue][columnValue] == SquareState::Knight)
         chessPiece.knightMove(rowValue, columnValue);
-    if (board[rowValue - 1][columnValue - 1] == SquareState::Castle)
+    if (board[rowValue][columnValue] == SquareState::Castle)
         chessPiece.castleMove(rowValue, columnValue);
-    if (board[rowValue - 1][columnValue - 1] == SquareState::Pawn)
+    if (board[rowValue][columnValue] == SquareState::Pawn)
         chessPiece.pawnMove(rowValue, columnValue);
-    if (board[rowValue - 1][columnValue - 1] == SquareState::EmptySlot)
+    if (board[rowValue][columnValue] == SquareState::EmptySlot)
         chessPiece.noPieceSelected(rowValue, columnValue);
 } 
 

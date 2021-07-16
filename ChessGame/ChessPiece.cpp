@@ -44,10 +44,11 @@ void ChessPiece::castleMove(const int row, const int column)
 
 void ChessPiece::pawnMove(const int row, const int column)
 {
-
+    std::cout << "\tPiece: Pawn\n\tAvaliable move(s):";
 }
 
 void ChessPiece::noPieceSelected(const int row, const int column)
 {
 
+   // if(row > 0)
 }
